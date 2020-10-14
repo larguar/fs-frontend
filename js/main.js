@@ -48,7 +48,7 @@ if (top.location.pathname === path1 + 'signup.html' || path2 + 'signup.html') {
 	});
 }
 
-
+if (top.location.pathname === path1 + 'index2.html' || path2 + 'index2.html') {
 
 /* ALERT
 –––––––––––––––––––––––––––––– */
@@ -165,4 +165,6 @@ function removeToPlaceholder() {
 function removeAndRestart() {
 	$('.image-upload-wrap').show();
 	$('.file-upload-content').hide();
+}
+
 }
