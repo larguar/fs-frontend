@@ -1,54 +1,47 @@
-const path1 = '/Users/lauren/Github/fs-frontend/';
-const path2 = 'https://siminski.co/fs-frontend/';
-
 /* LOGIN/SIGN UP
 –––––––––––––––––––––––––––––– */
 
-if (top.location.pathname === path1 + 'index.html' || path2 + 'index.html') {
-	$('#login').on('submit', event => {
-		event.preventDefault();
-		
-		const email = $('#login #email').val();
-		
-		const alert = $('#login .alert');
-		const alertText = $('#login .alert-copy');
-		
-		if (!email || !password) {
-			alert.show();
-			alertText.text('Please fill out all fields.');
-		} else {
-			alert.hide();
-			console.log('Email Address:', email);
-		}
-	});
-}
+$('#login').on('submit', event => {
+	event.preventDefault();
+	
+	const email = $('#login #email').val();
+	
+	const alert = $('#login .alert');
+	const alertText = $('#login .alert-copy');
+	
+	if (!email || !password) {
+		alert.show();
+		alertText.text('Please fill out all fields.');
+	} else {
+		alert.hide();
+		console.log('Email Address:', email);
+	}
+});
 
-if (top.location.pathname === path1 + 'signup.html' || path2 + 'signup.html') {	
-	$('#signup').on('submit', event => {
-		event.preventDefault();
-		
-		const email = $('#signup #email').val();
-		const username = $('#signup #username').val();
-		const name = $('#signup #name').val();
-		const location = $('#signup #location').val();
-		
-		const alert = $('#signup .alert');
-		const alertText = $('#signup .alert-copy');
-		
-		if (!email || !password || !username || !name || !location) {
-			alert.show();
-			alertText.text('Please fill out all fields.');
-		} else {
-			alert.hide();
-			console.log('Email Address:', email);
-			console.log('Username:', username);
-			console.log('Display name', name);
-			console.log('Location', location);
-		}
-	});
-}
+$('#signup').on('submit', event => {
+	event.preventDefault();
+	
+	const email = $('#signup #email').val();
+	const username = $('#signup #username').val();
+	const name = $('#signup #name').val();
+	const location = $('#signup #location').val();
+	
+	const alert = $('#signup .alert');
+	const alertText = $('#signup .alert-copy');
+	
+	if (!email || !password || !username || !name || !location) {
+		alert.show();
+		alertText.text('Please fill out all fields.');
+	} else {
+		alert.hide();
+		console.log('Email Address:', email);
+		console.log('Username:', username);
+		console.log('Display name', name);
+		console.log('Location', location);
+	}
+});
 
-if (top.location.pathname === path1 + 'index2.html' || path2 + 'index2.html') {
+
 
 /* ALERT
 –––––––––––––––––––––––––––––– */
@@ -165,6 +158,4 @@ function removeToPlaceholder() {
 function removeAndRestart() {
 	$('.image-upload-wrap').show();
 	$('.file-upload-content').hide();
-}
-
 }
