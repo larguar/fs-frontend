@@ -90,3 +90,35 @@ function removeAndRestart() {
 	$('.image-upload-wrap').show();
 	$('.file-upload-content').hide();
 }
+
+
+
+
+$('#login').on('submit', event => {
+	event.preventDefault();
+	
+	const email = $('#login #email').val();
+	const password = $('#login #password').val();
+	const alert = $('#login .alert');
+	const alertText = $('#login .alert-copy');
+	
+	if (!email && !password) {
+		alert.show();
+		alertText.text('Please enter an email address and password.');
+	} else if (!email) {
+		alert.show();
+		alertText.text('Please enter an email address.');
+	}
+	else if (!password) {
+		alert.show();
+		alertText.text('Please enter a password.');
+	} else {
+		alert.hide();
+		console.log('Email Address:', email);
+		console.log('Password', password);
+	}
+});
+
+$('.alert .close').on('click', () => {
+	$('#login .alert').hide();
+});
