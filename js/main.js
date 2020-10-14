@@ -1,7 +1,10 @@
+const path1 = '/Users/lauren/Github/fs-frontend/';
+const path2 = 'https://siminski.co/fs-frontend/';
+
 /* LOGIN/SIGN UP
 –––––––––––––––––––––––––––––– */
 
-if (top.location.pathname === '/Users/lauren/Github/fs-frontend/index.html') {
+if (top.location.pathname === path1 + 'index.html' || path2 + 'index.html') {
 	$('#login').on('submit', event => {
 		event.preventDefault();
 		
@@ -20,7 +23,7 @@ if (top.location.pathname === '/Users/lauren/Github/fs-frontend/index.html') {
 	});
 }
 
-if (top.location.pathname === '/Users/lauren/Github/fs-frontend/signup.html') {	
+if (top.location.pathname === path1 + 'signup.html' || path2 + 'signup.html') {	
 	$('#signup').on('submit', event => {
 		event.preventDefault();
 		
