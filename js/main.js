@@ -92,26 +92,21 @@ function removeAndRestart() {
 }
 
 
-
+/* LOGIN/SIGN UP
+–––––––––––––––––––––––––––––– */
 
 $('#login').on('submit', event => {
 	event.preventDefault();
 	
 	const email = $('#login #email').val();
 	const password = $('#login #password').val();
+	
 	const alert = $('#login .alert');
 	const alertText = $('#login .alert-copy');
 	
-	if (!email && !password) {
+	if (!email || !password) {
 		alert.show();
-		alertText.text('Please enter an email address and password.');
-	} else if (!email) {
-		alert.show();
-		alertText.text('Please enter an email address.');
-	}
-	else if (!password) {
-		alert.show();
-		alertText.text('Please enter a password.');
+		alertText.text('Please fill out all fields.');
 	} else {
 		alert.hide();
 		console.log('Email Address:', email);
@@ -119,6 +114,34 @@ $('#login').on('submit', event => {
 	}
 });
 
+$('#signup').on('submit', event => {
+	event.preventDefault();
+	
+	const email = $('#signup #email').val();
+	const password = $('#signup #password').val();
+	const username = $('#signup #username').val();
+	const name = $('#signup #name').val();
+	const location = $('#signup #location').val();
+	
+	const alert = $('#signup .alert');
+	const alertText = $('#signup .alert-copy');
+	
+	if (!email || !password || !username || !name || !location) {
+		alert.show();
+		alertText.text('Please fill out all fields.');
+	} else {
+		alert.hide();
+		console.log('Email Address:', email);
+		console.log('Password', password);
+		console.log('Username:', username);
+		console.log('Display name', name);
+		console.log('Location', location);
+	}
+});
+
+/* ALERT
+–––––––––––––––––––––––––––––– */
+
 $('.alert .close').on('click', () => {
-	$('#login .alert').hide();
+	$('.alert').hide();
 });
